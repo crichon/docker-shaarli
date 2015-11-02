@@ -15,11 +15,16 @@ Just run:
 
     docker run --name shaarli crichon/shaarli:latest
 
+Shaarli be available on http://localhost:80
+
+If you prefer you can use the compose file in order to start an automatic reverse proxy.
+It should then be available on http://shaarli.localdomain.
+
+
 Build and run:
 
-    git clone http://github.com/crichon/terminus.git && cd treminus && git co shaarli
-    docker build --name selfoss selfoss/
-    docker run --name selfoss selfoss
+    docker build --name shaarli shaarli/
+    docker run --name shaarli shaarli
 
 ## Details
 
@@ -28,3 +33,5 @@ Build and run:
 All data are contained inside the volume:
 
     /var/www/html/data
+
+If you are using the compose file, data would be kept thanks to a data container.

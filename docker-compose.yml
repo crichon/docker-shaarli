@@ -15,7 +15,6 @@ nginx:
     ports:
         - "80:80"
 
-
 # shaarli, a personnal links manager
 # ----------------------------------
 #
@@ -30,10 +29,10 @@ shaarli:
         VIRTUAL_HOST: "shaarli.localdomain"
         HOSTNAME: "shaarli.localdomain"
     volumes_from:
-        - shaarlidata
+        - shaarli-data
     extra_hosts:
         shaarli.localdomain: 127.0.0.1
-shaarlidata:
+shaarli-data:
     build: ./shaarli/
     volumes:
         - /var/www/html/data
